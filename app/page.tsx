@@ -363,7 +363,8 @@ export default function App() {
               DE <span>TEXTO</span>
             </h1>
             <p className="subtitle">
-              // conteo de letras · estadísticas · inversión
+              // Conteo de palabras · Letras más usadas · Presencia de «Python»
+              · Y más...
             </p>
           </div>
 
@@ -378,7 +379,7 @@ export default function App() {
           </div>
 
           <div className="card">
-            <div className="card-label">02 — Tres letras para buscar</div>
+            <div className="card-label">02 — Elije 3 letras para buscar</div>
             <div className="letters-row">
               {[0, 1, 2].map((i) => (
                 <div className="letter-input-wrap" key={i}>
@@ -388,7 +389,7 @@ export default function App() {
                     type="text"
                     value={letras[i]}
                     onChange={(e) => handleLetra(i, e.target.value)}
-                    placeholder="a"
+                    placeholder="A,B,C..."
                   />
                 </div>
               ))}

@@ -1,40 +1,106 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ANALIZADOR DE TEXTO
 
-## Getting Started
+> Herramienta web para analizar texto en tiempo real — conteo de letras, estadísticas y más.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Vercel](https://img.shields.io/badge/Deployed-Vercel-black?style=flat-square&logo=vercel)
+
+---
+
+## ¿Qué hace?
+
+Ingresás un texto y tres letras, y la app te devuelve al instante:
+
+- **Conteo de apariciones** de cada una de las 3 letras elegidas
+- **Total de palabras** en el texto
+- **Primera y última letra** del texto
+- **Detección de la palabra «Python»** dentro del texto
+- **Texto con las palabras en orden invertido**
+
+---
+
+## Demo
+
+🔗 [Ver app en vivo](https://analizador-texto-rodrigoo89.vercel.app)
+
+---
+
+## Tecnologías
+
+| Tecnología | Uso                          |
+| ---------- | ---------------------------- |
+| Next.js 15 | Framework principal          |
+| React 19   | Componentes y estado         |
+| TypeScript | Tipado estático              |
+| CSS-in-JS  | Estilos inline con variables |
+| Vercel     | Deploy y hosting             |
+
+---
+
+## Correr localmente
+
+**Requisitos:** Node.js 18+
 
 ```bash
+# 1. Clonar el repositorio
+git clone https://github.com/rodrigoo89/analizador-texto.git
+
+# 2. Entrar a la carpeta
+cd analizador-texto
+
+# 3. Instalar dependencias
+npm install
+
+# 4. Correr en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrí [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Cómo usarlo
 
-## Learn More
+1. **Escribí** cualquier texto en el campo principal
+2. **Ingresá 3 letras** que quieras buscar dentro del texto
+3. Hacé click en **→ Analizar texto**
+4. ¡Listo! Los resultados aparecen al instante
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Origen del proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Esta app nació como un script de Python de línea de comandos:
 
-## Deploy on Vercel
+```python
+texto = input("Escribe todo lo que quieras: ")
+letras = input("Ingresa 3 letras: ")
+# ...
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Y fue migrada a una interfaz web moderna con React y Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# analizador-texto
->>>>>>> bbcf3bf65103b29585b968f62ce39c9291ab6f3d
+---
+
+## Estructura del proyecto
+
+```
+analizador-texto/
+├── app/
+│   └── page.tsx       # Componente principal
+├── public/
+│   └── favicon.ico    # Ícono de la app
+├── README.md
+└── package.json
+```
+
+---
+
+## Autor
+
+**rodrigoo89** — [@rodrigoo89](https://github.com/rodrigoo89)
+
+---
+
+_Hecho con 🧡 y muchas ganas de aprender._
