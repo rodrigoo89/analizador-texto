@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 const style = `
@@ -268,7 +270,7 @@ const style = `
   }
 
   .badge-yes { background: rgba(100,220,100,0.12); color: #64dc64; border: 1px solid rgba(100,220,100,0.25); }
-  .badge-no  { background: rgba(255,90,31,0.12);  color: #ff5a1f;  border: 1px solid rgba(255,90,31,0.25);  }
+  .badge-no  { background: rgba(255,90,31,0.12);  color: #ff5a1f;  border: 1px solid rgba(255,90,31,0.25); }
 
   .inverted-block {
     background: #111118;
@@ -295,13 +297,22 @@ const style = `
   }
 `;
 
-export default function App() {
-  const [texto, setTexto] = useState("");
-  const [letras, setLetras] = useState(["", "", ""]);
-  const [resultado, setResultado] = useState(null);
-  const [error, setError] = useState("");
+interface Resultado {
+  conteos: { letra: string; count: number }[];
+  palabras: number;
+  primera: string;
+  ultima: string;
+  tienePython: boolean;
+  invertido: string;
+}
 
-  const handleLetra = (i, val) => {
+export default function App() {
+  const [texto, setTexto] = useState<string>("");
+  const [letras, setLetras] = useState<string[]>(["", "", ""]);
+  const [resultado, setResultado] = useState<Resultado | null>(null);
+  const [error, setError] = useState<string>("");
+
+  const handleLetra = (i: number, val: string) => {
     const nuevo = [...letras];
     nuevo[i] = val
       .replace(/[^a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]/g, "")
@@ -393,7 +404,6 @@ export default function App() {
             <div className="results" style={{ marginTop: 40 }}>
               <div className="results-title">Resultados</div>
 
-              {/* Conteo de letras */}
               <div className="stats-grid">
                 {resultado.conteos.map(({ letra, count }) => (
                   <div className="stat" key={letra}>
@@ -404,7 +414,6 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Palabras, primera, última */}
               <div className="info-row">
                 <div className="info-block">
                   <div className="info-key">Total de palabras</div>
@@ -465,7 +474,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Texto invertido */}
               <div
                 className="info-block"
                 style={{ borderTop: "1px solid #1f1f2e" }}
